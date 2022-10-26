@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GF Freight Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href ="assets/css/style.css" type = "text/css">
+</head>
+<body>
+    <header class="row">
+        <div class="col-md-8">
+            <h1 class="logo">GF Carriage calculator</h1>
+        </div>
+        <div class="col-md-4"></div>
+    </header>
+    <section class="row border">
+        <div id="parameters" class="col-md-7 border" >
+            <div id="pipe_or_fittings" class="border" >
+                <div class="card" id="fittings">
+                    <div class="card-img-top">
+                        <img>
+                    </div>
+                    <div class="card-body">
+                        <h2>Fittings</h2>
+                    </div>
+                </div>
+                <div class="card" id="pipe_fittings">
+                    <div class="card-img-top">
+                        <img>
+                    </div>
+                    <div class="card-body">
+                        <h2>Pipe & Fittings</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="delivery" class="row">
+                <div class="delivery">
+                    <h4>Delivery Selection</h4>
+                    <form class="form cf">
+                        <section class="delivery">
+                            <input type="radio" name="radio1" id="standard" value="standard"><label class="standard-label four col" for="standard">Standard</label>
+                            <input type="radio" name="radio1" id="am_del" value="am_del"><label class="am_del-label four col" for="am_del">AM Delivery</label>
+                            <input type="radio" name="radio1" id="pre930_del" value="pre930_del"><label class="pre930_del-label four col" for="pre930_del">Pre 9:30 Delivery</label>
+                            <input type="radio" name="radio1" id="sat_del" value="sat_del"><label class="sat_del-label four col" for="sat_del">Saturday Delivery</label>
+                        </section>
+                    </form>
+                </div>
+                <div>
+                <section class="weight">
+                <input type="number" name="weight" class="weight"><label class="weight"for="weight"> Enter weight of products</label>
+                <input type="submit" id="submit">
+                </section>
+            </div>
+        </div>
+        </div>
+    <div id="calculations" class="col-md-4 border" >
+            <p class="bg-warning">
+                Prices advised by the calculator are estimated on weights entered.</br>
+                Large fittings and large quantities may be sent by pallets, incuring freight per pallet rather than by weight.<br>
+                We dispatch via courier requesting as a next day delivery, this is not guaranteed by the courier - DX.
+            </p>
+            <section id="estimate_charge">
+
+            </section>
+        </div>
+    </div>
+    </section>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

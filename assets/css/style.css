@@ -1,0 +1,134 @@
+body {
+    margin:0 30px 0;
+
+}
+
+.logo{
+    color:aqua;
+    font-weight:800;
+    font-size:75px;
+    text-decoration:solid 2px black;
+}
+
+.border {
+    border: solid 2px black;
+}
+
+.card {
+    width:30%;
+    display:inline-block;
+    height:350px;
+    border: solid 4px black;
+    border-radius:12px;
+}
+.card h2 {
+    display:flex;
+    justify-content:center;
+}
+
+#pipe_or_fittings {
+    display:flex;
+    justify-content:space-evenly;
+}
+
+#delivery {
+    margin-top:25px;
+}
+.delivery form{
+    display:flex;
+    justify-content:space-evenly;
+}
+.delivery h4 {
+    display:flex;
+    justify-content:center;
+}
+
+.weight{
+    margin-top: 15px;
+    display:flex;
+    justify-content:center;
+}
+
+
+/* Radio button CSS Settings */
+.form .delivery input{
+    display: none;
+  }
+  
+  .form label{
+    position: relative;
+    color: #fff;
+    background-color: #aaa;
+    font-size: 26px;
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    display: inline-block;
+    cursor: pointer;
+    border: 3px solid transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .form .delivery input:checked + label{
+    border: 3px solid #333;
+    background-color: #2fcc71;
+  }
+  
+  .form .delivery input:checked + label:after{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 100%;
+    border: 2px solid #333;
+    background-color: #2fcc71;
+    z-index: 999;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+  
+  .submit{
+    padding: 15px 60px;
+    display: inline-block;
+    border: none;
+    margin: 20px 0;
+    background-color: #2fcc71;
+    color: #fff;
+    border: 2px solid #333;
+    font-size: 18px;
+    -webkit-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .submit:hover{
+    cursor: pointer;
+    transform: rotateX(360deg);
+  }
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.container {max-width: 850px; width: 100%; margin: 0 auto;}
+.four { width: 20%; max-width: 20%;}
+
+.weight {
+    display:inline-block;
+}
+
+.delivery {
+    margin:0 auto;
+}
