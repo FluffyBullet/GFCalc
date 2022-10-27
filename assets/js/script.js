@@ -3,14 +3,14 @@ charge.addEventListener("click", getValue);
 
 let options = "";
 let premium = ""
-let weight = document.getElementById("weight").value;
 let carriage = 0;
+let multiplier = 0;
 
 $(".tile").click(function(){
     $(this).fadeTo(1000,1);
     $(this).siblings().fadeTo(1000,0.2);
     options = $(this).children("h3").attr("id");
-})
+});
 
 $(".premium").children("p").click(function(){
     $(this).fadeTo(1000,1);
@@ -18,59 +18,127 @@ $(".premium").children("p").click(function(){
     $(this).siblings().css("background-color","white").css("color","black");
     $(this).css("background-color","teal").css("color","white");
     premium = $(this).attr("id");
-})
+});
 
 function getValue() {
-    if (options === "fitting"){
-        if (parseFloat(weight) <= 20 && premium === "time_a") {
-            carriage = 20.75;
-            alert("Carriage charge is £" + carriage);
-        } else if (parseFloat(weight) <= 20 && premium === "time_b") {
-            carriage = 27.00;
-            alert("Carriage charge is £" + carriage);
-        } else if (parseFloat(weight) <= 20 && premium === "time_c") {
-            carriage = 43.00;
-            alert("Carriage charge is £" + carriage);
-        } else if (parseFloat(weight) <= 20 && premium === "price_c") {
-            carriage = 43.00;
-            alert("Carriage charge is £" + carriage);
-        } else {
-            fittingValue();
-        }
-    } else if (options === "pipe") {
-        if(parseFloat(weight) <= 20) {
-            carriage = 30.25;
-            alert("Freight charge is £" + carriage);
-        } else {
-            pipeValue();
-        }
-    }
-    return carriage;
+    let weight = document.getElementById("weight").value;
+
+    if (premium === "time_a") {
+        carriage = options === "fitting" ? 20.75 : 30.25;
+        multiplier = options === "fitting" ? 0.38 : 0.53;
+    } else if (premium === "time_b") {
+        carriage = options === "fitting" ? 27.00: 54.00;
+        multiplier = options === "fitting" ? 0.62 : 0.64;
+    } else if (premium === "time_c") {
+        carriage = options === "fitting" ? 43.00 : 100;
+        multiplier = 0.82
+    } else if (premium === "time_d") {
+        carriage = options === "fitting" ? 60.50 : 104.50
+        multiplier = 0.85;
+    };
+    console.log("halfway through getValue");
+
+    if (weight > 20) {
+        getMultiplier();
+        getCharge(weight);
+    };
+    alert("£" + carriage);
 }
+
+function getCharge(weight){
+    console.log("getWeight starts");
+    let baseCharge = carriage;
+    let totalWeight = parseFloat(weight) + parseFloat(addPackaging(weight));
+    console.log("total Weight = " + totalWeight);
+    carriage = ((totalWeight - 20) * parseFloat(multiplier)) + parseFloat(baseCharge);
+    console.log(baseCharge);
+}
+
+function getMultiplier(){
+    console.log("getMultiplier starts");
+    if (premium === "time_a") {
+        multiplier = options === "fitting" ? "0.38":"0.53";
+    } else if ( premium === "time_b") {
+        multiplier = options === "fitting" ? "0.62":"0.64";
+    } else if ( premium === "time_c") {
+        multiplier = "0.82";
+    } else if ( premium === "time_d") {
+        multiplier = "0.85";
+    }
+};
 
 function addPackaging(weight){
     let addOnWeight = 0;
     if (parseFloat(weight) <= 30) {
         addOnWeight = 5;
     } else if ( parseFloat(weight) <= 40) {
-        addOnWeight = 10;
+        addOnWeight = 8;
+    } else if ( parseFloat(weight) <= 80) {
+        addOnWeight = 15;
+    } else if ( parseFloat(weight) <= 120) {
+        addOnWeight = 26;
+    } else if ( parseFloat(weight) <= 160) {
+        addOnWeight = 39;
+    } else if ( parseFloat(weight) <= 200) {
+        addOnWeight = 78;
+    } else {
+        addOnWeight = 200;
     }
+    getMultiplier();
     return addOnWeight;
 }
 
-function fittingValue(){
-    let packaging = addPackaging(weight);
-    console.log("packaging weight = " + packaging);
-    totalWeight = (weight + packaging) - 20;
-    console.log("total weight = " + totalWeight);
 
-}
+// function getValue() {
+//     let weight = document.getElementById("weight").value;
+//     if (options === "fitting"){
+//         if (parseFloat(weight) <= 20 && premium === "time_a") {
+//             carriage = 20.75;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "time_b") {
+//             carriage = 27.00;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "time_c") {
+//             carriage = 43.00;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "price_c") {
+//             carriage = 43.00;
+//             alert("Carriage charge is £" + carriage);
+//         } else {
+//             fittingValue();
+//         }
+//     } else if (options === "pipe"){
+//         if (parseFloat(weight) <= 20 && premium === "time_a") {
+//             carriage = 30.25;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "time_b") {
+//             carriage = 54.00;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "time_c") {
+//             carriage = 100.00;
+//             alert("Carriage charge is £" + carriage);
+//         } else if (parseFloat(weight) <= 20 && premium === "price_c") {
+//             carriage = 104.50;
+//             alert("Carriage charge is £" + carriage);
+//         } else {
+//             pipeValue();
+//     }
+//     return carriage;
+// }};
+// function fittingValue(){
+//     let packaging = addPackaging(weight.value);
+//     console.log("packaging weight = " + packaging);
+//     totalWeight = (parseFloat(weight.value) + parseFloat(packaging)) - 20;
+//     console.log("total weight = " + totalWeight);
 
-function pipeValue(){
-    pass
-}
+// }
 
-
+// function pipeValue(){
+//     let packaging = addPackaging(weight.value);
+//     console.log("packaging weight = " + packaging);
+//     totalWeight = (parseFloat(weight.value) + parseFloat(packaging)) - 20;
+//     console.log("total weight = " + totalWeight);
+// }
 
 /** 
  * next day, fittings - £20.75
