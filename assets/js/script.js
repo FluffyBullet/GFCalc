@@ -42,7 +42,7 @@ function getValue() {
         getMultiplier();
         getCharge(weight);
     };
-    alert("£" + carriage);
+    updatePage();
 }
 
 function getCharge(weight){
@@ -87,6 +87,18 @@ function addPackaging(weight){
     getMultiplier();
     return addOnWeight;
 }
+
+function updatePage() {
+    $('#deltype').text(options);
+    $('#entry').text(weight.value);
+    $('#calculated').text(carriage);
+}
+
+$('input').mouseover(function(){
+    $('#deltype').text("");
+    $('#entry').text("");
+    $('#calculated').text("");
+})
 
 
 // function getValue() {

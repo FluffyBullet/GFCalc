@@ -57,3 +57,7 @@ padding: 20px 20px;
 .weight {
     margin:25px 0px;
 }
+
+#deltype #entry #calculated {
+    font-weight:700;
+}
