@@ -5,16 +5,17 @@ let options = "";
 let premium = ""
 let carriage = 0;
 let multiplier = 0;
+let time = "";
 
 $(".tile").click(function(){
-    $(this).fadeTo(1000,1);
-    $(this).siblings().fadeTo(1000,0.2);
+    $(this).fadeTo(500,1);
+    $(this).siblings().fadeTo(500,0.2);
     options = $(this).children("h3").attr("id");
 });
 
 $(".premium").children("p").click(function(){
-    $(this).fadeTo(1000,1);
-    $(this).siblings().fadeTo(1000,0.2);
+    $(this).fadeTo(500,1);
+    $(this).siblings().fadeTo(500,.2);
     $(this).siblings().css("background-color","white").css("color","black");
     $(this).css("background-color","teal").css("color","white");
     premium = $(this).attr("id");
@@ -26,15 +27,19 @@ function getValue() {
     if (premium === "time_a") {
         carriage = options === "fitting" ? 20.75 : 30.25;
         multiplier = options === "fitting" ? 0.38 : 0.53;
+        time = "Next Day"
     } else if (premium === "time_b") {
         carriage = options === "fitting" ? 27.00: 54.00;
         multiplier = options === "fitting" ? 0.62 : 0.64;
+        time = "Pre 12"
     } else if (premium === "time_c") {
         carriage = options === "fitting" ? 43.00 : 100;
         multiplier = 0.82
+        time = "Pre 9:30"
     } else if (premium === "time_d") {
         carriage = options === "fitting" ? 60.50 : 104.50
         multiplier = 0.85;
+        time = "Saturday"
     };
     console.log("halfway through getValue");
 
@@ -92,13 +97,9 @@ function updatePage() {
     $('#deltype').text(options);
     $('#entry').text(weight.value);
     $('#calculated').text(carriage.toFixed(2));
+    $('#time').text(time);
 }
 
-$('input').mouseover(function(){
-    $('#deltype').text("");
-    $('#entry').text("");
-    $('#calculated').text("");
-})
 
 
 // function getValue() {
