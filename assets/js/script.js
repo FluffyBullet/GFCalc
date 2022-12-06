@@ -91,7 +91,7 @@ function addPackaging(weight){
 function updatePage() {
     $('#deltype').text(options);
     $('#entry').text(weight.value);
-    $('#calculated').text(carriage);
+    $('#calculated').text(carriage.toFixed(2));
 }
 
 $('input').mouseover(function(){
