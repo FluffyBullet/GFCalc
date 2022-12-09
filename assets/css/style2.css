@@ -35,7 +35,7 @@ header {
 padding: 20px 20px;
 }
 .card img {
-    height:150px;
+    height:200px;
 }
 
 .tile {
@@ -61,4 +61,9 @@ padding: 20px 20px;
 #deltype #entry #calculated {
     font-weight:700;
 }
-    
+
+#panel1 h3, #panel1 p, #panel1 img {
+    display:flex;
+    justify-content:center;
+    margin: 0 auto;
+}

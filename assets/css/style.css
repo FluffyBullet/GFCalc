@@ -49,6 +49,9 @@ body {
     justify-content:center;
 }
 
+.select-panel {
+    background-color:#aaa;
+}
 
 /* Radio button CSS Settings */
 .form .delivery input{
