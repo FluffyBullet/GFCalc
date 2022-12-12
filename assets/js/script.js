@@ -93,6 +93,16 @@ function addPackaging(weight){
     return addOnWeight;
 }
 
+function tnt_freight(weight){
+    air_weight = weight * int(1.5)
+    console.log(air_weight)
+    if (options === "pipe" && premium === "time_e") {
+        alert("We are unable to send pipe from Switzerland via TNT")
+        return false
+    }
+    
+}
+
 function updatePage() {
     $('#deltype').text(options);
     $('#entry').text(weight.value);
