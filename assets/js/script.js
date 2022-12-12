@@ -1,11 +1,21 @@
 charge = document.getElementById("calculate");
 charge.addEventListener("click", getValue);
+tnt_weight = document.getElementById("tnt_get_value");
+tnt_weight.addEventListener("click", tnt_charge);
 
 let options = "";
 let premium = ""
 let carriage = 0;
 let multiplier = 0;
 let time = "";
+let tnt_value = {
+    5:50,10:50,15:60,20:60,25:65,30:70,35:70,40:75,45:80,50:80,55:85,60:85,65:90,70:90,75:95,80:95,85:100,90:100,95:100,100:100,100.1:105,110:105,
+    110.1:110,120:110,130:110,140:110,150:120,160:120,170:120,170.1:130,180:130,190:130,190.1:185,200:185,210:185,210.1:190,220:190,230:190,230.1:195,
+    240:195,250:195,250.1:200,260:200,270:200,280:200,280.1:205,290:205,300:205,310:205,310.1:210,320:210,330:210,340:210,340.1:215,350:215,360:215,
+    370:215,370.1:240,380:240,390:240,390.1:245,400:245,410:245,410.1:250,420:250,430:250,440:250,440.1:255,450:255,460:255,470:255,470.1:260,480:260,
+    490:260,500:260,500.1:280,600:280,600.1:305,700:305,700.1:410,800:410,900:440,900.1:555,1000:555,1000.1:735,2000:735,2000.1:930,2500:930,2500.1:1840,
+    5000:1840,5000.1:3350,10000:3350
+}
 
 $(".tile").click(function(){
     $(this).fadeTo(500,1);
@@ -48,6 +58,12 @@ function getValue() {
         getCharge(weight);
     };
     updatePage();
+}
+
+function tnt_charge(){
+    let input_weight = $("#tnt_weight_entry")
+    let calculated_weight = (parseFloat(input_weight) * 1.5) * 10;
+    console.log(typeof(calculated_weight));
 }
 
 function getCharge(weight){
