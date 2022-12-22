@@ -61,9 +61,19 @@ function getValue() {
 }
 
 function tnt_charge(){
-    let input_weight = $("#tnt_weight_entry")
-    let calculated_weight = (parseFloat(input_weight) * 1.5) * 10;
-    console.log(typeof(calculated_weight));
+    let input_weight = document.getElementById('tnt_weight_entry');
+    console.log(input_weight);
+    let calculated_weight = (Math.ceil((input_weight.value) * 1.5) * 10);
+    console.log(parseInt(calculated_weight));
+    for (target in tnt_value) {
+        if (parseInt(input_weight) == parseInt(tnt_value[target])){
+            console.log(`freight charge is ${tnt_value[target]}`);
+        }
+        else {
+            console.log(`${calculated_weight} does not match ${tnt_value[target]}`);
+        };
+    }
+    // 50 does not match 50, data types ? matching parameters ?
 }
 
 function getCharge(weight){
@@ -111,12 +121,13 @@ function addPackaging(weight){
 
 function tnt_freight(weight){
     air_weight = weight * int(1.5)
-    console.log(air_weight)
+    console.log(air_weight.value)
     if (options === "pipe" && premium === "time_e") {
         alert("We are unable to send pipe from Switzerland via TNT")
         return false
     }
     
+    // tnt_value['key'] will return value of the key. For loop required to iterate through
 }
 
 function updatePage() {
