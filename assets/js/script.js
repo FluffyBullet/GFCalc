@@ -63,23 +63,42 @@ function getValue() {
 function tnt_charge(){
     let input_weight = document.getElementById('tnt_weight_entry').value;
     console.log(input_weight);
-    let calculated_weight = (input_weight * 15);
+    let calculated_weight = Math.ceil(input_weight * 15);
     console.log(calculated_weight);
-    if (tnt_value[Math.ceil(calculated_weight) !== undefined]){
-        console.log("this worked\n");
-        console.log(`${calculated_weight} has been entered`)
-        console.log(`£ ${tnt_value[calculated_weight]}`);
+    let updated = false;
+    
+    function updateFreight(){
+        if (tnt_value[calculated_weight] === undefined){
+            console.log(`'match not found, ${tnt_value[calculated_weight]} is not on the list'`);
+            console.log(calculated_weight);
+            calculated_weight ++;
+            updateFreight(calculated_weight);
+        } else {
+            console.log(`${tnt_value[calculated_weight]} is the freight value!`)
+            updated = true;
+        }
     }
-    else {
-        console.log("failed");
-        console.log(calculated_weight);
-        console.log(tnt_value[calculated_weight]);
-        calculated_weight ++;
-        tnt_charge()
-
+    if (updated === false){
+        updateFreight(calculated_weight);
+    } else {
+        document.getElementById('charge_tnt').innerText('testing');
+        updated = false;
     }
-    // 50 does not match 50, data types ? matching parameters ?
 }
+
+
+    //         if (tnt_value[Math.ceil(calculated_weight) !== undefined]){
+    //         console.log("this worked\n");
+    //         console.log(`${calculated_weight} has been entered`);
+    //         console.log(`£ ${tnt_value[calculated_weight]}`);
+    //         updated = True
+    //     }
+    // } else {
+    //         console.log("failed");
+    //         console.log(calculated_weight);
+    //         console.log(tnt_value[calculated_weight]);
+    //         calculated_weight ++;
+    //     }
 
 function getCharge(weight){
     console.log("getWeight starts");
@@ -122,17 +141,6 @@ function addPackaging(weight){
     }
     getMultiplier();
     return addOnWeight;
-}
-
-function tnt_freight(weight){
-    air_weight = weight * int(1.5)
-    console.log(air_weight.value)
-    if (options === "pipe" && premium === "time_e") {
-        alert("We are unable to send pipe from Switzerland via TNT")
-        return false
-    }
-    
-    // tnt_value['key'] will return value of the key. For loop required to iterate through
 }
 
 function updatePage() {
