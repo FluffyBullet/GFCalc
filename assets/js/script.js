@@ -61,17 +61,22 @@ function getValue() {
 }
 
 function tnt_charge(){
-    let input_weight = document.getElementById('tnt_weight_entry');
+    let input_weight = document.getElementById('tnt_weight_entry').value;
     console.log(input_weight);
-    let calculated_weight = (Math.ceil((input_weight.value) * 1.5) * 10);
-    console.log(parseInt(calculated_weight));
-    for (target in tnt_value) {
-        if (parseInt(input_weight) == parseInt(tnt_value[target])){
-            console.log(`freight charge is ${tnt_value[target]}`);
-        }
-        else {
-            console.log(`${calculated_weight} does not match ${tnt_value[target]}`);
-        };
+    let calculated_weight = (input_weight * 15);
+    console.log(calculated_weight);
+    if (tnt_value[Math.ceil(calculated_weight) !== undefined]){
+        console.log("this worked\n");
+        console.log(`${calculated_weight} has been entered`)
+        console.log(`£ ${tnt_value[calculated_weight]}`);
+    }
+    else {
+        console.log("failed");
+        console.log(calculated_weight);
+        console.log(tnt_value[calculated_weight]);
+        calculated_weight ++;
+        tnt_charge()
+
     }
     // 50 does not match 50, data types ? matching parameters ?
 }
