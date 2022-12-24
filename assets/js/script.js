@@ -86,20 +86,6 @@ function tnt_charge(){
     }
 }
 
-
-    //         if (tnt_value[Math.ceil(calculated_weight) !== undefined]){
-    //         console.log("this worked\n");
-    //         console.log(`${calculated_weight} has been entered`);
-    //         console.log(`£ ${tnt_value[calculated_weight]}`);
-    //         updated = True
-    //     }
-    // } else {
-    //         console.log("failed");
-    //         console.log(calculated_weight);
-    //         console.log(tnt_value[calculated_weight]);
-    //         calculated_weight ++;
-    //     }
-
 function getCharge(weight){
     console.log("getWeight starts");
     let baseCharge = carriage;
@@ -155,59 +141,12 @@ $('#weight').keypress(function(event){
         getValue()
     }
 })
+$('#collapseThree').keypress(function(event){
+    if (event.which == 13){
+        tnt_charge()
+    }
+})
 
-
-
-// function getValue() {
-//     let weight = document.getElementById("weight").value;
-//     if (options === "fitting"){
-//         if (parseFloat(weight) <= 20 && premium === "time_a") {
-//             carriage = 20.75;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "time_b") {
-//             carriage = 27.00;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "time_c") {
-//             carriage = 43.00;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "price_c") {
-//             carriage = 43.00;
-//             alert("Carriage charge is £" + carriage);
-//         } else {
-//             fittingValue();
-//         }
-//     } else if (options === "pipe"){
-//         if (parseFloat(weight) <= 20 && premium === "time_a") {
-//             carriage = 30.25;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "time_b") {
-//             carriage = 54.00;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "time_c") {
-//             carriage = 100.00;
-//             alert("Carriage charge is £" + carriage);
-//         } else if (parseFloat(weight) <= 20 && premium === "price_c") {
-//             carriage = 104.50;
-//             alert("Carriage charge is £" + carriage);
-//         } else {
-//             pipeValue();
-//     }
-//     return carriage;
-// }};
-// function fittingValue(){
-//     let packaging = addPackaging(weight.value);
-//     console.log("packaging weight = " + packaging);
-//     totalWeight = (parseFloat(weight.value) + parseFloat(packaging)) - 20;
-//     console.log("total weight = " + totalWeight);
-
-// }
-
-// function pipeValue(){
-//     let packaging = addPackaging(weight.value);
-//     console.log("packaging weight = " + packaging);
-//     totalWeight = (parseFloat(weight.value) + parseFloat(packaging)) - 20;
-//     console.log("total weight = " + totalWeight);
-// }
 
 /** 
  * next day, fittings - £20.75

@@ -1,5 +1,7 @@
 body {
     margin: 0 auto;
+    background-color:navy;
+    color:white;
 }
 
 .border {
@@ -69,4 +71,9 @@ min-width: 100px
 #panel1 img {
     width: 60%;
     height:75%;
+}
+
+#accordionExample {
+    width: 80%;
+    margin: 0 auto;
 }
