@@ -27,9 +27,9 @@ header {
 }
 
 .range .card {
-    width: 30%;
     height:100%;
     display:inline-block;
+    width: fit-content;
 
 }
 
