@@ -1,0 +1,18 @@
+.table td{
+    border:black 1px solid;
+    width: 350px;
+}
+
+.table {
+    margin:0 auto
+}
+
+* { 
+    text-align:center;
+}
+
+.machine-panel {
+    width:80%;
+    margin: 10px auto;
+    border: black 1px solid;
+}
