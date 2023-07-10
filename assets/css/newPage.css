@@ -1,0 +1,73 @@
+body {
+    text-align:center;
+}
+
+header {
+    margin:30px auto;
+}
+
+.disclaimer {
+    width:70%;
+    font-size:10px;
+    margin:0 auto;
+    border:none;
+}
+
+form {
+    margin: 10px auto;
+}
+
+.form-section {
+    margin: 10px auto;
+}
+
+.border-outer {
+    width:80%;
+    margin:15px auto;    
+    display:block;
+    position:relative;
+    height:fit-content;
+    border-bottom:2px solid blue;
+}
+.section-inner {
+    height:fit-content;
+    display:block;
+    margin:5px auto;
+}
+
+.hide {
+    display:none;
+}
+.tabs li {
+    display:inline-block;
+}
+
+.sep {
+    width:25%;
+    margin:15px auto 15px auto;
+    color:blue;
+    opacity:0.2;
+}
+
+
+@media screen and (min-width:758px){
+    .border-outer {
+        height:fit-content;
+        width:80%;
+        margin:15px auto;    
+    }
+    .section-inner {
+        height:fit-content;
+        width:45%;
+        display:inline-flex;
+        margin:15px auto;
+        flex-direction:column;
+        justify-content:end;
+    }
+    #calculate {
+        margin:0 auto;
+        width:30%;
+    }
+    
+
+}

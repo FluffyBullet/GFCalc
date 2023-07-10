@@ -1,7 +1,7 @@
 charge = document.getElementById("calculate");
 charge.addEventListener("click", getValue);
 tnt_weight = document.getElementById("tnt_get_value");
-tnt_weight.addEventListener("click", tnt_charge);
+// tnt_weight.addEventListener("click", tnt_charge);
 
 let options = "";
 let premium = ""
