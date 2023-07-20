@@ -68,6 +68,27 @@ form {
         margin:0 auto;
         width:30%;
     }
-    
 
+    #tnt_input {
+        width:30%;
+        display:inline-block;
+    }
+    #tnt_input button {
+        margin-top:25px;
+    }
+    #tnt_results {
+        margin-top:30px;
+    }
+    
+    #palletRate {
+        margin:45px auto;
+        text-align:center;
+    }
+    #palletRate table {
+        margin:0 auto;
+        width:50%;
+    }
+    #palletRate table td {
+        border:1px solid black;
+    }
 }

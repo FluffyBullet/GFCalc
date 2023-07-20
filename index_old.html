@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GF Freight Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href ="assets/css/style2.css" type = "text/css">
+</head>
+<body>
+<header class="center">
+    <h1>GF UK Carriage Calculator</h1><br>
+    <sup>Nov 2022</sup>
+</header>
+ 
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Information
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Information provided on this website is used as a guide on expected carriage. Value(s) quoted by this calculator is not guaranteed. <br>
+              Prices are taken from 1st December 2022 - Please check if prices have increased since for confirmation.
+            </p>
+            <p>
+              Whilst goods are dispatched requesting next day delivery, this is actioned by third party, which +GF+ cannot be held liable for. 
+              Customs, pipe deliveries, weather and remote locations are likely for an increase in lead time.
+            </p>
+            <p>
+              To start, select either option below with delivery parameters to advise of freight charges, and thank you for using this service!
+            </p>
+              <p> Note, this website is used for educational purpose on use with coding language of HTML, CSS and JavaScript (With jQuery framework). This is not
+                  an official GF Document and cannot be taken as a promise.
+              </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          DX Freight
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <div class="options select-panel">
+                <div class="container">
+                    <div class="range space" id="panel1">
+                        <!--<h3>Product ranges</h3> -->
+                        <div class="card tile space">
+                            <img src="assets/images/fitting.jpg" id="fitting-pic"/>
+                            <h3 id="fitting">Fittings Only</h3>
+                        </div>
+                        <div class="card tile space">
+                            <img src="assets/images/pipe_valve.png"/>
+                            <h3 id="pipe">Pipe & Fittings / Pipe</h3>
+                        </div>
+                    </div>
+                    <div class="premium space">
+                        <!-- <h3> timed delivery</h3> -->
+                        <p id="time_a" class="card">Standard delivery</p>
+                        <p id="time_b" class="card">Pre-12 delivery</p>
+                        <p id="time_c" class="card">Pre 9:30 delivery</p>
+                        <p id="time_d" class="card">Saturday Delivery</p>
+                    </div>
+                    <div class="weight space " >
+                        <div>
+                        <input type="number" id="weight"><label for="weight">Weight in KG</label>
+                        </div>
+                        <input type="submit" id="calculate" value="Calculate Freight">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 charge ">
+                <div class="warning alert">
+                        <p id = "display">Based on your entry of:<br>
+                            Pipe or Fittings only : <span id="deltype"></span><br>
+                            Timed delivery: <span id="time"></span><br>
+                            Weight Entered: <span id="entry"></span></p>
+                            <p> Estimated carriage charge is £<span id="calculated"></span></p>
+                </div>
+            </div>   
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          TNT - Fittings Only
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <p>Orders processed before 12pm is requested as dispatched from Switzerland via TNT. Stock availbiltiy, bank holiday's and other circumstances may delay delivery.
+          Estimated 1-3 days for goods leaving Switzerland via TNT To UK Mainland, Scotland and Ireland will be approximately 2 days. (Customs pending)
+          </p>
+          <div class="weight space">
+          <input type="number" id="tnt_weight_entry"><label for="tnt_weight_entry">Weight of goods in KG</label>
+          <input type="submit" id="tnt_get_value" value="Enter">
+          <p id="charge_tnt"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.esm.min.js"
+      }
+    }
+    </script>
+    <script type="module">
+      import * as bootstrap from 'bootstrap'
+
+      new bootstrap.Popover(document.getElementById('popoverButton'))
+    </script>
+</body>
+</html>
