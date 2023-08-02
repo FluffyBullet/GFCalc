@@ -90,24 +90,19 @@ function dxCharge() {
     if (weight > 20) {
         newWeight = weight - 20 + addOnWeight;
         additionalCharge = newWeight * multiplier;
+        updatedCarriage = (carriage + additionalCharge).toFixed(0);
+    } else { 
+        updatedCarriage = carriage
     }
     
     console.log(" calculations = " +  carriage + " additional " + additionalCharge);
-    updatedCarriage = carriage + additionalCharge;
-    let newCharge = 0
-    if ((carriage + additionalCharge) % 5 != 0) {
-        newCharge = newCharge + 1;
-        console.log("increased by £1");
-    } else {
-        newCharge = carriage + additionalCharge;
-    }
 
     // update page with results
 
     $('#deltype').text(options);
     $('#time').text(time);
     $('#entry').text(weight + "kg");
-    $('#calculated').text(("Estimated Carriage = £" + (updatedCarriage).toFixed(0)+ ".00"));
+    $('#calculated').text(("Estimated Carriage = £" + updatedCarriage));
 
 }
 
