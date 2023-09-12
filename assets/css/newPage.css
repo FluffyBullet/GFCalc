@@ -49,6 +49,10 @@ form {
     opacity:0.2;
 }
 
+#historyWeight {
+    display:none;
+}
+
 
 @media screen and (min-width:758px){
     .border-outer {
@@ -90,5 +94,17 @@ form {
     }
     #palletRate table td {
         border:1px solid black;
+    }
+
+    #historyWeight th {
+        min-width: 120px;
+    }
+    #historyWeight {
+        text-align:center;
+        width:25%;
+        font-size:small;
+        display:flex;
+        justify-content:center;
+        margin:0 auto;
     }
 }

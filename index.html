@@ -59,10 +59,10 @@
     <div class="section-inner">
       <div class="m-3">
         <p><u>Select Category:</u></p>
-        <input type="radio" class="btn-check" value="fittings"name="options" id="fittings" autocomplete="off">
+        <input type="radio" class="btn-check" value="fittings" name="options" id="fittings" autocomplete="off">
         <label class="btn btn-outline-primary" for="fittings">Fittings Only</label>
 
-        <input type="radio" class="btn-check" name="options" value="pipe"id="pipe" autocomplete="off" checked>
+        <input type="radio" class="btn-check" name="options" value="pipe" id="pipe" autocomplete="off" checked>
         <label class="btn btn-outline-primary" for="pipe">With Pipe</label>
       </div>
       <hr class="sep">
@@ -74,7 +74,8 @@
         <input type="radio" class="btn-check" name="premium" value="pre_noon" id="pre_noon" autocomplete="off">
         <label class="btn btn-outline-primary" for="pre_noon">Pre 12</label>
 
-        <input type="radio" class="btn-check" name="premium" value="early_morning"id="early_morning" autocomplete="off">
+        <input type="radio" class="btn-check" name="premium" value="early_morning" id="early_morning"
+          autocomplete="off">
         <label class="btn btn-outline-primary" for="early_morning">Pre 9:30</label>
 
         <input type="radio" class="btn-check" name="premium" value="sat" id="sat" autocomplete="off">
@@ -84,7 +85,7 @@
         <label>Weight:</label>
         <input type="number" id="weight" step="0.01" placeholder="Weight in KG" required />
       </div>
-      <button id="calculate" onclick="dxCharge()"class="btn btn-primary">Calculate</button>
+      <button id="calculate" onclick="dxCharge()" class="btn btn-primary">Calculate</button>
     </div>
     <div class="section-inner">
       <div>
@@ -96,13 +97,40 @@
         <p><strong><span id="calculated"></span></strong></p>
       </div>
     </div>
+    <hr>
+    <section id="historyWeight" class="text-center">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>
+              Time
+            </th>
+            <th>
+              Pipe?
+            </th>
+            <th>
+              Service
+            </th>
+            <th>
+              Weight Entered
+            </th>
+            <th>
+              Price
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"class="table-group-divider">
+         
+        </tbody>
+      </table>
+  </section>
   </section>
   <section id="tntpanel" class="border-outer hide">
     <h3> <u>Air Freight (TNT)</u></h3>
     <div class="tnt_input">
       <div>
         <label for="tntweight">Air Freight Weight:</label>
-        <input id="tntweight" type="number"/>
+        <input id="tntweight" type="number" />
         <button id="tntSubmit" onclick="tntCharge()" class="btn btn-primary">Calculate</button>
       </div>
     </div>
@@ -131,6 +159,7 @@
       </tr>
     </table>
   </section>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
